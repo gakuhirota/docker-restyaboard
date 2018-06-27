@@ -4,9 +4,12 @@ ARG TERM=linux
 ARG DEBIAN_FRONTEND=noninteractive
 
 # restyaboard version
-ENV restyaboard_version=v0.2.1
+ENV restyaboard_version=v0.6.5
+ENV DEBIAN_FRONTEND noninteractive
 
 # update & install package
+RUN apt-get update --yes
+RUN apt-get install --yes apt-utils
 RUN apt-get update --yes
 RUN apt-get install --yes zip curl cron postgresql nginx
 RUN apt-get install --yes php5 php5-fpm php5-curl php5-pgsql php5-imagick libapache2-mod-php5
